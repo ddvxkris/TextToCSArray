@@ -1,0 +1,13 @@
+//insert this code in main method of console app
+string Path = $"{Environment.CurrentDirectory}\\texttocs.txt";
+if (!File.Exists(Path))
+{
+    Console.WriteLine("File \"texttocs.txt\" doesn't exists!");
+    Console.ReadKey();
+    return;
+}
+Console.WriteLine("string[] name = new string[]");
+Console.WriteLine("{");
+foreach (var line in File.ReadAllLines(Path))
+    Console.WriteLine($"    \"{line}\"");
+Console.WriteLine("};");
